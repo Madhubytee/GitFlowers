@@ -15,7 +15,7 @@
   font-display: swap;
 }
 
-/* Base styles */
+/*Base styles*/
 *,
 *::after,
 *::before {
@@ -984,7 +984,7 @@ body {
   border-radius: inherit;
 }
 
-/* 6 tepals arranged in star */
+/*6 tepals arranged in a like star way*/
 .lily__petal--1 {
   transform: translate(-50%, -2%) rotateY(0deg) rotateX(25deg);
   z-index: 3;
@@ -1015,7 +1015,7 @@ body {
   z-index: 3;
 }
 
-/* Stamens - 6 prominent stamens with anthers */
+/* Stamens (6 of them)*/
 .lily__stamen {
   position: absolute;
   bottom: 2vmin;
@@ -1028,7 +1028,7 @@ body {
   z-index: 5;
 }
 
-/* Anther at top of stamen */
+/*Anther at top of stamen*/
 .lily__stamen::after {
   content: "";
   position: absolute;
@@ -1072,7 +1072,7 @@ body {
   animation-delay: 2.3s;
 }
 
-/* Central pistil with 3-lobed stigma */
+/*Central pistil with 3 lobed stigma*/
 .lily__pistil {
   position: absolute;
   bottom: 2vmin;
@@ -1085,7 +1085,7 @@ body {
   z-index: 6;
 }
 
-/* 3-lobed stigma at top */
+/*3-lobed stigma at top*/
 .lily__pistil::after {
   content: "";
   position: absolute;
@@ -1151,10 +1151,7 @@ body {
   animation-delay: 3.5s;
 }
 
-/* ============================================
-   FLOWER STEM
-   ============================================ */
-
+/* ---------------flower STEM------------------*/
 .flower__line {
   width: 1.5vmin;
   background-image:
@@ -1165,7 +1162,7 @@ body {
   position: relative;
 }
 
-/* Stem leaves */
+/*Stem leaves*/
 .flower__line__leaf {
   --w: 7vmin;
   --h: calc(var(--w) + 2vmin);
@@ -1223,10 +1220,7 @@ body {
   animation: blooming-leaf-left 0.3s 2s backwards;
 }
 
-/* ============================================
-   GRASS DECORATION - FROM REFERENCE
-   ============================================ */
-
+/* ---------------grass------------------*/
 .flower__grass {
   --c: #04661f;
   --line-w: 1.5vmin;
@@ -1440,7 +1434,7 @@ body {
   }
 }
 
-/* Simple grass blades for scattered decoration */
+/*grass blades*/
 .grass {
   position: absolute;
   bottom: 0;
@@ -1453,10 +1447,7 @@ body {
   z-index: 5;
 }
 
-/* ============================================
-   SEEDS
-   ============================================ */
-
+/* ---------------seed styles------------------*/
 .seeds-container {
   position: absolute;
   bottom: 8%;
@@ -1489,9 +1480,7 @@ body {
   box-shadow: 0 0 20px rgba(255, 215, 0, 1);
 }
 
-/* ============================================
-   TYPEWRITER TEXT
-   ============================================ */
+/* ---------------typewriter text------------------*/
 
 .typewriter-text {
   font-family: 'FlowerMessage';
@@ -1500,7 +1489,7 @@ body {
   top: 5%;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1200; /* ensure the message text stays above preview visuals */
+  z-index: 1200; /*ensure the message text stays above preview visuals*/
   text-align: center;
   width: 90%;
   word-wrap: break-word;
@@ -1512,10 +1501,7 @@ body {
   margin-left: 2px;
 }
 
-/* ============================================
-   KEYFRAME ANIMATIONS
-   ============================================ */
-
+/* ---------------keyframe animartions------------------*/
 @keyframes grow-flower-tree {
   0% {
     height: 0;
@@ -1625,9 +1611,8 @@ body {
     filter: blur(3px);
   }
 }
-/* ============================================
-  SHARED VIEW (fullscreen)
-  ============================================ */
+
+/* ---------------shared view------------------*/
 .shared-view {
   position: fixed;
   top: 0;
@@ -1644,15 +1629,10 @@ body {
   height: 100%;
 }
 
-/* In the fullscreen/shared view we want the flowers centered horizontally
-   but not shifted down like the preview. This override ensures the
-   shared view keeps flowers centered (translateX) and at natural vertical
-   position while the `.preview-viewport .flowers-preview` rule continues
-   to apply the downward offset inside the editor preview only. */
 .shared-view .flowers-preview {
   transform-origin: bottom center;
   transform: translate(-50%, 0) scale(1);
-  position: absolute; /* match inline positioning used by FullscreenDisplay */
+  position: absolute; 
   bottom: 0;
   left: 50%;
   width: 100%;
@@ -1660,9 +1640,6 @@ body {
   z-index: 1;
 }
 
-/* ============================================
-   RESPONSIVE STYLES
-   ============================================ */
 
 @media (max-width: 1024px) {
   .editing-mode {
@@ -1763,7 +1740,7 @@ body {
   }
 }
 
-/* Prevent unwanted scrolling in preview and modal areas */
+/*motal code*/
 .app-container,
 .editing-mode,
 .preview-panel,
@@ -1773,36 +1750,28 @@ body {
   overflow: hidden !important;
 }
 
-/* Ensure the modal content is constrained and doesn't grow past its box */
 .link-modal {
-  /* Allow the modal itself to scroll if its contents are tall so
-     the Close button remains reachable. Keep the overall container
-     constrained to the viewport. */
   max-height: 80vh;
   box-sizing: border-box;
   overflow-y: auto;
   overflow-x: hidden;
-  /* reduced padding so modal content doesn't force internal scrollbars */
   padding: 6px 8px;
   position: relative;
   z-index: 1200;
-  /* Layout: place header and link row inline; Close button goes below */
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
 }
 
-/* Keep the link input readable while preventing line wrapping/overflow */
 .link-wrapper {
   display: flex;
-  gap: 6px; /* reduced gap */
+  gap: 6px;
   align-items: center;
-  margin: 0; /* remove extra spacing inside modal */
-  flex: 1 1 0; /* take remaining row space beside header */
+  margin: 0; 
+  flex: 1 1 0; 
 }
 .link-input {
-  /* Keep the input on a single row; truncate visually if too long */
   flex: 1 1 auto;
   white-space: nowrap;
   overflow: hidden;
@@ -1811,15 +1780,12 @@ body {
   margin: 0;
 }
 
-/* Place the close button below the header+link row */
 .close-modal {
-  /* Bring the Close button higher (near the link row). Keep it
-     visually accessible without changing modal structure elsewhere. */
   position: relative;
-  order: 2; /* lower order so it appears earlier (higher) in the modal */
-  width: auto; /* don't stretch full width */
-  margin: 0 0 0 0; /* reduce top margin so it sits higher */
+  order: 2; 
+  width: auto; 
+  margin: 0 0 0 0; 
   align-self: flex-start;
   padding: 8px 12px;
-  margin-left: auto; /* push it to the right side of the row */
+  margin-left: auto; 
 }

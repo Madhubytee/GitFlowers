@@ -1,0 +1,17 @@
+{
+  "name": "digital-flowers",
+  "version": "1.0.0",
+  "description": "Send beautiful digital flowers to your crush with personalized messages",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "flowers",
+    "digital",
+    "romance",
+    "react"
+  ],
+  "author": "",
+  "license": "MIT"
+}
