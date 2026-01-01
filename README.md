@@ -1,5 +1,4 @@
 # GitFlowers
-(Get your crushhh!)
 A web application for creating and sharing customizable animated flowers with personalized messages.
 
 ## Overview
